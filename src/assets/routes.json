@@ -10,7 +10,6 @@
     },
     {
       "route": "/*",
-      "serve": "/",
       "allowedRoles": ["authenticated"]
     }
   ]
