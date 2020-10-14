@@ -1,0 +1,17 @@
+{
+  "routes": [
+    {
+      "route": "/login",
+      "serve": "/.auth/login/github"
+    },
+    {
+      "route": "/logout",
+      "serve": "/.auth/logout"
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "allowedRoles": ["authenticated"]
+    }
+  ]
+}
