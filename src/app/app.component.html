@@ -1,3 +1,9 @@
-<kirby-app>
-  <kirby-router-outlet main="true"></kirby-router-outlet>
-</kirby-app>
+<main class="container">
+  <ng-container *ngIf="loading | async">
+    <kirby-spinner></kirby-spinner>
+  </ng-container>
+
+  <ng-container *ngIf="!(loading | async) && (isAuth | async)">
+    <kirby-router-outlet main="true"></kirby-router-outlet>
+  </ng-container>
+</main>
