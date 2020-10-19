@@ -18,6 +18,8 @@ export class AuthService {
       url = environment.authUrlMock;
     }
 
+    console.log(url);
+
     return this.httpClient.get(url).pipe(map((x) => x as AuthMe));
   }
 
@@ -25,6 +27,7 @@ export class AuthService {
     return this.authMe().pipe(
       first(),
       map((x: AuthMe) => {
+        console.log('isAuthenticated', x);
         return x.clientPrincipal === null
           ? false
           : x.clientPrincipal.userRoles.includes('authenticated');

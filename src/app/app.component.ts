@@ -27,7 +27,7 @@ export class AppComponent {
         this.loading = of(false);
         this.isAuth = of(isAuth);
 
-        console.log('isauth', isAuth);
+        console.log('app isauth', isAuth);
 
         if (!isAuth) {
           window.location.href = environment.authUrl + 'login/github';
