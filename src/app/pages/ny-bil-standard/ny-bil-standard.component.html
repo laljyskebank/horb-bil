@@ -1,0 +1,42 @@
+<kirby-page
+  title="Velkommen til feature Bil"
+  defaultBackHref="/"
+  [hideBackButton]="true"
+>
+  <kirby-page-content>
+    <p>Hvilken bilklasse ønsker du?</p>
+    <kirby-dropdown
+      [size]=""
+      placeholder="Vælg ønsket bilklasse"
+      expand="block"
+      [items]="[
+        'Mikrobil',
+        'Minibil',
+        'Lille mellemklassebil',
+        'Stor mellemklassebil',
+        'Øvre mellemklassebil',
+        'Luksusbil'
+      ]"
+    ></kirby-dropdown>
+    <br />
+    <p>Hvilken prisklasse ønsker du?</p>
+    <kirby-dropdown
+      [size]=""
+      placeholder="Vælg ønsket bilklasse"
+      expand="block"
+      [items]="['Low cost', 'Standard', 'Premium', 'Luksus']"
+    ></kirby-dropdown>
+    <br />
+    <p>Hvilken energiklasse ønsker du?</p>
+    <kirby-dropdown
+      [size]=""
+      placeholder="Vælg ønsket energiklasse"
+      expand="block"
+      [items]="['A+++', 'A++', 'A+', 'A', 'B', 'C', 'D', 'E', 'F']"
+    ></kirby-dropdown>
+    <br />
+    <button kirby-button [size]="" expand="block" (click)="onClick.emit()">
+      Videre
+    </button>
+  </kirby-page-content>
+</kirby-page>

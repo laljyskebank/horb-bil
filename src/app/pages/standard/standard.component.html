@@ -1,0 +1,34 @@
+<kirby-page
+  title="Velkommen til feature Bil"
+  defaultBackHref="/"
+  [hideBackButton]="true"
+>
+  <kirby-page-content>
+    <!-- Første skærmbillede ved anskaffelse af bil -->
+    <p>Hvad skal bilen hedde?</p>
+    <kirby-form-field>
+      <input kirby-input placeholder="Skriv bilens navn her" />
+    </kirby-form-field>
+    <p>Hvordan ønsker du at tilføje din bil?</p>
+    <kirby-dropdown
+      [size]=""
+      placeholder="Vælg her, hvordan du vil tilføje din bil"
+      expand="block"
+      [items]="[
+        'Standardværdier - vi giver dig forslag',
+        'Nummerplade - du kender bilen',
+        'Manuel indtastning - du kender bilen'
+      ]"
+    ></kirby-dropdown>
+    <br />
+    <div class="container-item">
+      <p>Er det din nuværende bil?</p>
+       <kirby-checkbox
+        checked="true"
+        (checkedChange)="checkedChange($event)"
+      ></kirby-checkbox>
+    </div>
+    <br />
+    <button kirby-button [size]="" expand="block" (click)="onClick.emit()">Videre</button>
+  </kirby-page-content>
+</kirby-page>

@@ -1,0 +1,40 @@
+<kirby-page
+  title="Velkommen til feature Bil"
+  defaultBackHref="/"
+  [hideBackButton]="true"
+>
+  <kirby-page-content>
+    <!-- Velkommen -->
+    <p>
+      Her kan du indtaste dine oplysninger. Hvis ikke du gør det nu, beder vi
+      dig om at tage stilling senere for bedst muligt at kunne rådgive dig.
+    </p>
+    <h2>Oplysninger om dig</h2>
+    <kirby-form-field label="Hvad er dit navn?">
+      <input kirby-input />
+    </kirby-form-field>
+    <kirby-form-field label="Hvor gammel er du?">
+      <input type="number" kirby-input />
+    </kirby-form-field>
+    <kirby-dropdown
+      placeholder="Hvor langt kører du årligt? "
+      expand="block"
+      [items]="[
+        '10.000-15.000 km',
+        '15.000-20.000 km',
+        '20.000-25.000 km',
+        '25.000-30.000 km',
+        '30.000-35.000 km',
+        '35.000+ km'
+      ]"
+    ></kirby-dropdown>
+    <br />
+    <kirby-dropdown
+      placeholder="Hvor risikovillig er du? "
+      expand="block"
+      [items]="['1', '2', '3', '4', '5']"
+    ></kirby-dropdown>
+    <br />
+    <button kirby-button expand="block" (click)="onClick.emit()">Videre</button>
+  </kirby-page-content>
+</kirby-page>

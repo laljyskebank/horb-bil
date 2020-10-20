@@ -1,0 +1,48 @@
+<kirby-page
+  title="Velkommen til feature Bil"
+  defaultBackHref="/"
+  [hideBackButton]="true"
+>
+  <kirby-page-content>
+    <!--Anskaffelse af bil ud fra standardværdier. Her kommer der forslag til bil-->
+
+    <p>
+      Ud fra dine valg har vi her nogle forslag til, hvilke biler, du bør
+      anskaffe dig. Ønsker du andre varianter, gå da tilbage og vælg andre
+      værdier.
+    </p>
+    <!--Bilmulighed 1-->
+    <kirby-item>
+      <kirby-label>
+        <h3>Honda Civic</h3>
+        <p detail><b>Samlet TCO: 3500 kr/md </b></p>
+        <p detail>Forsikring: 1000 kr/md</p>
+        <p detail>Brændstofforbrug: 2000 kr/md</p>
+        <p detail>Vedligeholdelse: 500 kr/md</p>
+      </kirby-label>
+      <button slot="end" kirby-button size="sm">Vælg</button>
+    </kirby-item>
+    <!--Bilmulighed 2-->
+    <kirby-item>
+      <kirby-label>
+        <h3>Hyundai i20</h3>
+        <p detail><b>Samlet TCO: 3500 kr/md </b></p>
+        <p detail>Forsikring: 1000 kr/md</p>
+        <p detail>Brændstofforbrug: 2000 kr/md</p>
+        <p detail>Vedligeholdelse: 500 kr/md</p>
+      </kirby-label>
+      <button slot="end" kirby-button size="sm" (click)="onClick.emit()">Vælg</button>
+    </kirby-item>
+    <!--Bilmulighed 3-->
+    <kirby-item>
+      <kirby-label>
+        <h3>Toyota Avensis</h3>
+        <p detail><b>Samlet TCO: 3500 kr/md </b></p>
+        <p detail>Forsikring: 1000 kr/md</p>
+        <p detail>Brændstofforbrug: 2000 kr/md</p>
+        <p detail>Vedligeholdelse: 500 kr/md</p>
+      </kirby-label>
+      <button slot="end" kirby-button size="sm">Vælg</button>
+    </kirby-item>
+  </kirby-page-content>
+</kirby-page>

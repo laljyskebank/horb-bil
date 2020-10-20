@@ -1,0 +1,25 @@
+<kirby-page
+  title="Velkommen til feature Bil"
+  defaultBackHref="/"
+  [hideBackButton]="true"
+>
+  <kirby-page-content>
+    <!-- Ønsker du at tilføje en bil med det samme -->
+    <h2>Ønsker du at tilføje en bil med det samme?</h2>
+    <p>
+      Hvis du tilføjer en bil med det samme, er vi bedre i stand til at hjælpe
+      dig. Ønsker du ikke at gøre det nu, vil du blive bedt om det senere.
+    </p>
+    <kirby-card
+      hasPadding="true"
+      class="attention-levels"
+    >
+      <button kirby-button size="buttonSize" attentionLevel="1" expand="block" (click)="onClick.emit()">
+        Ja tak
+      </button>
+      <button kirby-button size="buttonSize" attentionLevel="2" expand="block">
+        Nej tak
+      </button>
+    </kirby-card>
+  </kirby-page-content>
+</kirby-page>

@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+
+index =0;
+
   buttonSize = 'md';
 
   data = [
@@ -36,4 +39,8 @@ export class HomeComponent implements OnInit {
   ];
   constructor() {}
   ngOnInit(): void {}
+
+  setIndex(value:number) {
+    this.index=value
+  }
 }
