@@ -1,9 +1,221 @@
 <kirby-page
-  title="HORB - Bil"
+  title="Velkommen til feature Bil"
   defaultBackHref="/"
   [hideBackButton]="true"
 >
-  <kirby-page-content>
-    <p>Hello world!!!</p>
-  </kirby-page-content>
-</kirby-page>
+    <kirby-page-content>
+
+    <!-- Velkommen -->
+      <ng-container *ngIf="true">
+      <p>Her kan du indtaste dine oplysninger. Hvis ikke du gør det nu, beder vi dig om at tage stilling senere for bedst muligt at kunne rådgive dig.
+      </p>
+      <h2> Oplysninger om dig</h2>
+      <kirby-form-field label="Hvad er dit navn?">
+        <input kirby-input />
+      </kirby-form-field>
+      <kirby-form-field label="Hvor gammel er du?">
+        <input type="number" kirby-input/>
+      </kirby-form-field>
+      <kirby-dropdown
+        placeholder="Hvor langt kører du årligt? "
+        expand="block"
+        [items]="['10.000-15.000 km','15.000-20.000 km', '20.000-25.000 km', '25.000-30.000 km', '30.000-35.000 km', '35.000+ km']"
+      ></kirby-dropdown>
+      <br>
+      <kirby-dropdown
+        placeholder="Hvor risikovillig er du? "
+        expand="block"
+        [items]="['1', '2', '3', '4', '5']"
+      ></kirby-dropdown>
+      <br>
+      <button kirby-button [size]="buttonSize" expand="block">Videre</button>
+    </ng-container>
+
+
+    <!-- Ønsker du at tilføje en bil med det samme -->
+    <ng-container *ngIf="true">
+      <h2>Ønsker du at tilføje en bil med det samme?</h2>
+      <p>Hvis du tilføjer en bil med det samme, er vi bedre i stand til at hjælpe dig. Ønsker du ikke at gøre det nu, vil du blive bedt om det senere.</p>
+      <kirby-card hasPadding="true" class="attention-levels" [themeColor]="themeColor">
+        <button kirby-button size="buttonSize" attentionLevel="1" expand="block"> Ja tak </button>
+        <button kirby-button size="buttonSize" attentionLevel="2" expand="block"> Nej tak </button>
+    </kirby-card>
+    </ng-container>
+
+    <!-- Første skærmbillede ved anskaffelse af bil -->
+    <ng-container *ngIf="true">
+      <p>Hvad skal bilen hedde?</p>
+      <kirby-form-field>
+        <input kirby-input placeholder="Skriv bilens navn her" />
+      </kirby-form-field>
+      <p>Hvordan ønsker du at tilføje din bil?</p>
+      <kirby-dropdown
+        [size]="size"
+         placeholder="Vælg her, hvordan du vil tilføje din bil"
+        expand="block"
+        [items]="['Standardværdier - vi giver dig forslag', 'Nummerplade - du kender bilen', 'Manuel indtastning - du kender bilen']"
+      ></kirby-dropdown>
+      <br>
+      <div class="container-item">
+        <p>Er det din nuværende bil?</p>
+        <kirby-checkbox checked="true" (checkedChange)="checkedChange($event)"></kirby-checkbox>
+      </div>
+      <br>
+      <button kirby-button [size]="buttonSize" expand="block">Videre</button>
+    </ng-container>
+
+        <!-- Tilføjelse af bil ved standardværdier -->
+    <ng-container *ngIf="true">
+      <p>Ved valg af standardværdier giver vi dig nogle forslag til bilkøb ud fra dine valgte præferencer. Fortæl os lidt mere om dine ønsker!</p>
+      <p>Hvad er din ønskede bilklasse?</p>
+      <kirby-dropdown
+        [size]="size"
+        placeholder="Vælg ønsket bilklasse"
+        expand="block"
+        [items]="['Mikrobil', 'Minibil', 'Lille mellemklassebil', 'Stor mellemklassebil', 'Øvre mellemklassebil', 'Luksusbil']"
+      ></kirby-dropdown>
+      <br>
+      <p>Hvad er din ønskede prisklasse?</p>
+      <kirby-dropdown
+        [size]="size"
+        placeholder="Vælg ønsket prisklasse"
+        expand="block"
+        [items]="['Low-cost', 'Standard', 'Premium', 'Luksus']"
+    ></kirby-dropdown>
+      <br>
+      <p>Hvad er din ønskede energiklasse?</p>
+    <kirby-dropdown
+        [size]="size"
+        placeholder="Vælg ønsket energiklasse"
+        expand="block"
+        [items]="['A+++', 'A++', 'A+', 'A', 'B', 'C', 'D', 'E', 'F']"
+    ></kirby-dropdown>
+    <br>
+    <button kirby-button [size]="buttonSize" expand="block">Videre</button>
+    <br><br>
+    </ng-container>
+
+    <!--Anskaffelse af bil ud fra standardværdier. Her kommer der forslag til bil-->
+    <ng-container *ngIf="true">
+      <p>Ud fra dine valg har vi her nogle forslag til, hvilke biler, du bør anskaffe dig. Ønsker du andre varianter, gå da tilbage og vælg andre værdier.</p>
+      <!--Bilmulighed 1-->
+      <kirby-item>
+        <kirby-label>
+          <h3>Honda Civic</h3>
+          <p detail> <b>Samlet TCO: 3500 kr/md </b></p>
+          <p detail>Forsikring: 1000 kr/md</p>
+          <p detail>Brændstofforbrug: 2000 kr/md</p>
+          <p detail>Vedligeholdelse: 500 kr/md</p>
+        </kirby-label>
+        <button slot="end" kirby-button size="sm">Vælg</button>
+      </kirby-item>
+      <!--Bilmulighed 2-->
+      <kirby-item>
+        <kirby-label>
+          <h3>Hyundai i20</h3>
+          <p detail> <b>Samlet TCO: 3500 kr/md </b></p>
+          <p detail>Forsikring: 1000 kr/md</p>
+          <p detail>Brændstofforbrug: 2000 kr/md</p>
+          <p detail>Vedligeholdelse: 500 kr/md</p>
+        </kirby-label>
+        <button slot="end" kirby-button size="sm">Vælg</button>
+      </kirby-item>
+      <!--Bilmulighed 3-->
+      <kirby-item>
+        <kirby-label>
+          <h3>Toyota Avensis</h3>
+          <p detail> <b>Samlet TCO: 3500 kr/md </b></p>
+          <p detail>Forsikring: 1000 kr/md</p>
+          <p detail>Brændstofforbrug: 2000 kr/md</p>
+          <p detail>Vedligeholdelse: 500 kr/md</p>
+        </kirby-label>
+        <button slot="end" kirby-button size="sm">Vælg</button>
+      </kirby-item>
+      <br><button kirby-button size="buttonSize" attentionLevel="1" expand="block"> Videre </button>
+    </ng-container>
+    <!--Min biløkonomi-->
+    <ng-container *ngIf="true">
+      <kirby-item>
+        <div slot="outside">
+          <div class="flag success"></div>
+          <div class="flag warning"></div>
+        </div>
+        <kirby-avatar overlay="true" slot="start">
+          <kirby-icon name="moneybag"></kirby-icon>
+        </kirby-avatar>
+        <kirby-label>
+          <h3>Min biløkonomi</h3>
+          <p subtitle>Fars bimmer</p>
+          <p subtitle>Søs' dyt</p>
+        </kirby-label>
+        <data slot="end" class="kirby-text-bold" value="value">7500 kr./md.</data>
+      </kirby-item>
+      <!--Fars bimmer-->
+      <kirby-item>
+        <div slot="outside">
+          <div class="flag success"></div>
+          <div class="flag warning"></div>
+        </div>
+        <kirby-avatar overlay="true" slot="start">
+          <kirby-icon name="attach"></kirby-icon>
+        </kirby-avatar>
+        <kirby-label>
+          <h3>Fars bimmer</h3>
+          <p subtitle>XYZ</p>
+          <p detail>Forsikring</p>
+          <p detail>Brændstof</p>
+          <kirby-icon name="arrow-down" size="sm"></kirby-icon>
+        </kirby-label>
+        <data slot="end" class="kirby-text" value="value">5500 kr./md.</data>
+      </kirby-item>
+      <!--Søs' dyt-->
+      <kirby-item>
+        <div slot="outside">
+          <div class="flag success"></div>
+          <div class="flag warning"></div>
+        </div>
+        <kirby-avatar overlay="true" slot="start">
+          <kirby-icon name="attach"></kirby-icon>
+        </kirby-avatar>
+        <kirby-label>
+          <h3>Søs' dyt</h3>
+          <p subtitle>XYZ</p>
+          <p detail>Forsikring</p>
+          <p detail>Brændstof</p>
+          <kirby-icon name="arrow-down" size="sm"></kirby-icon>
+        </kirby-label>
+        <data slot="end" class="kirby-text" value="value">2000 kr./md.</data>
+      </kirby-item>
+      <!--Tilføj bil-->
+      <kirby-icon name="add" themeColor="primary" size="md">Tilføj bil</kirby-icon>
+    </ng-container>
+    <!--Beregningsside-->
+    <ng-container *ngIf="true">
+
+      <kirby-card>
+        <kirby-card-header title="Oversigt">
+
+        </kirby-card-header>
+          <kirby-chart
+            height="240"
+            type="areaspline"
+            description="Oversigt forklaring"
+            [data]="data"
+          >
+          </kirby-chart>
+        <kirby-card-footer>
+          <div>
+            <span (click)="data = [200, 100, 300, 100, 200, 300, 200]">Jan </span>
+            <span (click)="data = [100, 100, 100, 400, 200, 200, 200]">Feb </span>
+            <span (click)="data = [500, 400, 300, 200, 100, 200, 300]">Mar </span>
+          </div>
+          <!--<div (init)="chartData=[1000, 2000, 500, 1000, 1500]">
+            <span (click)="chartData=[200, 100]">Scenarie 1</span>
+            <span (click)="chartData=[100, 100]">Scenarie 2</span>
+            <span (click)="chartData=[500, 400]">Scenarie 3</span>
+          </div>-->
+        </kirby-card-footer>
+      </kirby-card>
+    </ng-container>
+    </kirby-page-content>
+  </kirby-page>
